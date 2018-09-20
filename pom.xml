@@ -25,18 +25,18 @@
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+        <repository>
+            <id>keycloak-user-information</id>
+            <url>https://raw.github.com/908ab/keycloak-user-information/mvn-repo/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- jersey -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet-core</artifactId>
-        </dependency>
-
-        <!-- mongodb -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
-            <version>${mongo-java-driver.version}</version>
         </dependency>
 
         <!-- lombok -->
@@ -47,18 +47,18 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- spring -->
+        <!-- apache -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${apache.httpclient.version}</version>
         </dependency>
 
-        <!-- guave -->
+        <!-- mongodb-dao -->
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
+            <groupId>miyakawalab.tool</groupId>
+            <artifactId>mongodb-dao</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
@@ -72,10 +72,8 @@
         <ownerName>908ab</ownerName>
 
         <jersey.version>2.25.1</jersey.version>
-        <mongo-java-driver.version>3.6.3</mongo-java-driver.version>
         <lombok.version>1.16.20</lombok.version>
-        <spring.version>4.1.4.RELEASE</spring.version>
-        <guava.version>23.0</guava.version>
+        <apache.httpclient.version>4.5.6</apache.httpclient.version>
     </properties>
 
     <distributionManagement>
