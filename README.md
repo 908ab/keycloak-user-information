@@ -4,7 +4,7 @@ maven repository
 
 ## Description
 * Jerseyのアプリケーションでユーザ情報を取得する
-* ドメイン層にはUserInformationクラスを使用（MongoDBでドキュメントをネストできます）
+* ドメイン層にはUserInformationクラスを使用（MongoDBでUserInformationのドキュメントをネストできます）
 * レスポンスにはUserInformationResクラスを使用
 
 ## Usage
