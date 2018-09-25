@@ -19,5 +19,23 @@ public class SubjectResource {
 }
 ```
 
+## Install
+* maven
+```
+<dependencies>
+    <dependency>
+        <groupId>miyakawalab.tool</groupId>
+        <artifactId>keycloak-user-information</artifactId>
+        <version>${version}</version>
+    </dependency>
+</dependencies>
+<repositories>
+    <repository>
+        <id>mongodb-dao</id>
+        <url>https://raw.github.com/908ab/keycloak-user-information/mvn-repo/</url>
+    </repository>
+</repositories>
+```
+
 ## Version
 > 1.0
