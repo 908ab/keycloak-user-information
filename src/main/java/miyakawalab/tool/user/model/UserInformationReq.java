@@ -1,8 +1,9 @@
-package miyakawalab.tool.user;
+package miyakawalab.tool.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import miyakawalab.tool.user.domain.UserInformation;
 import org.apache.http.Header;
 import org.apache.http.message.BasicHeader;
 

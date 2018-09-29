@@ -1,14 +1,13 @@
-package miyakawalab.tool.user;
+package miyakawalab.tool.user.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import miyakawalab.tool.mongo.domain.DocumentConvertible;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserInformation implements DocumentConvertible {
+public class UserInformation {
     private String userId;
     private String firstName;
     private String lastName;

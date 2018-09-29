@@ -1,8 +1,9 @@
-package miyakawalab.tool.user;
+package miyakawalab.tool.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import miyakawalab.tool.user.domain.UserInformation;
 
 @Data
 @AllArgsConstructor
