@@ -3,7 +3,7 @@ package miyakawalab.tool.user.infrastructure.mongo.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import miyakawalab.tool.mongo.domain.DocumentConvertible;
+import miyakawalab.tool.mongo.entity.DocumentConvertible;
 import miyakawalab.tool.user.domain.UserInformation;
 
 @Data
