@@ -1,4 +1,4 @@
-package miyakawalab.tool.user.mongo;
+package miyakawalab.tool.user.infrastructure.mongo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +18,7 @@ public class MongoUserInformation implements DocumentConvertible {
         return new UserInformation(this.userId, this.firstName, this.lastName);
     }
 
-    public static MongoUserInformation valueOf(UserInformation userInformation) {
+    public static MongoUserInformation fromDomain(UserInformation userInformation) {
         return new MongoUserInformation(
             userInformation.getUserId(),
             userInformation.getFirstName(),
