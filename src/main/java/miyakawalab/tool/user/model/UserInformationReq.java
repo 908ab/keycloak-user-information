@@ -3,21 +3,18 @@ package miyakawalab.tool.user.model;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import miyakawalab.tool.user.base.UserInformationInterface;
 import miyakawalab.tool.user.domain.UserInformation;
-import org.apache.http.Header;
-import org.apache.http.message.BasicHeader;
 
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.InternalServerErrorException;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserInformationReq {
+public class UserInformationReq implements UserInformationInterface {
     @HeaderParam("oidc_claim_preferred_username")
     @NotNull
     private String userId;
@@ -46,14 +43,6 @@ public class UserInformationReq {
 
     public UserInformationRes toUserInformationRes() {
         return new UserInformationRes(this.getUserId(), this.getFirstName(), this.getLastName());
-    }
-
-    public List<Header> toHeaders() {
-        List<Header> headers = new ArrayList<>();
-        headers.add(new BasicHeader("oidc_claim_preferred_username", this.userId));
-        headers.add(new BasicHeader("oidc_claim_given_name", this.firstName));
-        headers.add(new BasicHeader("oidc_claim_family_name", this.lastName));
-        return headers;
     }
 
     private static String encode(String str) {
