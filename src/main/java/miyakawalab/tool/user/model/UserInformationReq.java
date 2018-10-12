@@ -3,18 +3,17 @@ package miyakawalab.tool.user.model;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import miyakawalab.tool.user.base.UserInformationInterface;
 import miyakawalab.tool.user.domain.UserInformation;
+import miyakawalab.tool.user.util.StringCodeUtil;
 
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.HeaderParam;
-import javax.ws.rs.InternalServerErrorException;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserInformationReq implements UserInformationInterface {
+public class UserInformationReq {
     @HeaderParam("oidc_claim_preferred_username")
     @NotNull
     private String userId;
@@ -26,15 +25,15 @@ public class UserInformationReq implements UserInformationInterface {
     private String lastName;
 
     public String getUserId() {
-        return encode(this.userId);
+        return StringCodeUtil.encode(this.userId, StandardCharsets.ISO_8859_1, StandardCharsets.UTF_8);
     }
 
     public String getFirstName() {
-        return encode(this.firstName);
+        return StringCodeUtil.encode(this.firstName, StandardCharsets.ISO_8859_1, StandardCharsets.UTF_8);
     }
 
     public String getLastName() {
-        return encode(this.lastName);
+        return StringCodeUtil.encode(this.lastName, StandardCharsets.ISO_8859_1, StandardCharsets.UTF_8);
     }
 
     public UserInformation toUserInformation() {
@@ -43,14 +42,5 @@ public class UserInformationReq implements UserInformationInterface {
 
     public UserInformationRes toUserInformationRes() {
         return new UserInformationRes(this.getUserId(), this.getFirstName(), this.getLastName());
-    }
-
-    private static String encode(String str) {
-        try {
-            byte[] bytes = str.getBytes("ISO_8859-1");
-            return new String(bytes, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            throw new InternalServerErrorException("can't encoding from ISO_8859-1 to UTF-8.");
-        }
     }
 }

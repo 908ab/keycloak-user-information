@@ -3,13 +3,12 @@ package miyakawalab.tool.user.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import miyakawalab.tool.user.base.UserInformationInterface;
 import miyakawalab.tool.user.domain.UserInformation;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserInformationRes implements UserInformationInterface {
+public class UserInformationRes {
     private String userId;
     private String firstName;
     private String lastName;
