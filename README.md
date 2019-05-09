@@ -31,7 +31,7 @@ public class SubjectResource {
 </dependencies>
 <repositories>
     <repository>
-        <id>mongodb-dao</id>
+        <id>keycloak-user-information</id>
         <url>https://raw.github.com/908ab/keycloak-user-information/mvn-repo/</url>
     </repository>
 </repositories>
